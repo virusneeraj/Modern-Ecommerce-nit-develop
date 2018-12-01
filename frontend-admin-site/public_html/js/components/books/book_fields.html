@@ -1,0 +1,822 @@
+<div class="row">
+    <div class="col-md-12 col-sm-12">
+        <div class="clearfix20"></div>
+        <div class="row">
+            <div class="col-xs-4"
+                 ng-class="{'has-error' : createProductForm.name.$touched && createProductForm.name.$invalid}"
+                 style="padding-left: 0">
+                <div class="">
+                    <label for="txtname" ng-i18next="table.header.book.name"></label>
+                </div>
+                <div class="">
+                    <input ng-model="product.name"
+                           name="name"
+                           id="txtName"
+                           aria-describedby="nameErr"
+                           type="text"
+                           class="form-control"
+                           required="required" maxlength="64"/>
+
+                    <div id="nameErr" ng-show="createProductForm.name.$touched">
+                                                <span class="help-block" ng-show="createProductForm.name.$error.pattern"
+                                                      ng-i18next="validation.name.invalid_pattern"></span>
+                        <span class="help-block"
+                              ng-show="createProductForm.name.$error.required"
+                              ng-i18next="validation.name.required"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4"
+                 ng-class="{'has-error' : createProductForm.browsingName.$touched && createProductForm.browsingName.$invalid}"
+            >
+                <div class="">
+                    <label for="txtname" ng-i18next="table.header.book.browsing_name"></label>
+                </div>
+                <div class="">
+                    <input ng-model="product.browsingName"
+                           name="browsingName"
+                           id="txtName"
+                           aria-describedby="nameErr"
+                           type="text"
+                           class="form-control"
+                           required="required" maxlength="64"/>
+
+                    <div id="nameErr" ng-show="createProductForm.browsingName.$touched">
+                                                <span class="help-block"
+                                                      ng-show="createProductForm.browsingName.$error.pattern"
+                                                      ng-i18next="validation.browsing_name.invalid_pattern"></span>
+                        <span class="help-block"
+                              ng-show="createProductForm.browsingName.$error.required"
+                              ng-i18next="validation.browsing_name.required"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4"
+                 ng-class="{'has-error' : createProductForm.price.$touched && createProductForm.price.$invalid}"
+                 style="left: 9px">
+                <div class="">
+                    <label for="txtname" ng-i18next="table.header.book.price"></label>
+                </div>
+                <div class="">
+                    <input ng-model="product.salePrice"
+                           name="price"
+                           type="number"
+                           class="form-control"
+                           step="any"
+                           required="required"/>
+
+                    <div id="nameErr" ng-show="createProductForm.price.$touched">
+                                                <span class="help-block"
+                                                      ng-show="createProductForm.price.$error.pattern"
+                                                      ng-i18next="validation.price.invalid_pattern">Price must be a number</span>
+                        <span class="help-block"
+                              ng-show="createProductForm.price.$error.required"
+                              ng-i18next="validation.price.required"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix20"></div>
+
+        <div class="clearfix20"></div>
+        <div class="row">
+            <div class="col-xs-4"
+                 ng-class="{'has-error' : createProductForm.overview.$touched && createProductForm.overview.$invalid}"
+                 style="padding-left: 0">
+                <div class="">
+                    <label for="txtname" ng-i18next="table.header.book.overview"></label>
+                </div>
+                <div class="">
+                    <input ng-model="product.overview"
+                           name="overview"
+                           id="txtName"
+                           aria-describedby="nameErr"
+                           type="text"
+                           class="form-control"
+                           maxlength="64"/>
+
+                    <div id="nameErr" ng-show="createProductForm.overview.$touched">
+                                                <span class="help-block"
+                                                      ng-show="createProductForm.overview.$error.pattern"
+                                                      ng-i18next="validation.overview.invalid_pattern"></span>
+                        <span class="help-block"
+                              ng-show="createProductForm.overview.$error.required"
+                              ng-i18next="validation.overview.required"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4"
+                 ng-class="{'has-error' : createProductForm.quantity.$touched && createProductForm.quantity.$invalid}">
+                <div class="">
+                    <label for="txtname" ng-i18next="table.header.book.quantity"></label>
+                </div>
+                <div class="">
+                    <input ng-model="product.quantity"
+                           name="quantity"
+                           type="number"
+                           class="form-control"
+                           step="any"
+                           required="required"/>
+
+                    <div id="nameErr" ng-show="createProductForm.quantity.$touched">
+                                                <span class="help-block"
+                                                      ng-show="createProductForm.quantity.$error.pattern"
+                                                      ng-i18next="validation.quantity.invalid_pattern">Price must be a number</span>
+                        <span class="help-block"
+                              ng-show="createProductForm.quantity.$error.required"
+                              ng-i18next="validation.quantity.required"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4"
+                 ng-class="{'has-error' : createProductForm.sku.$touched && createProductForm.sku.$invalid}"
+                 style="left: 9px">
+                <div class="">
+                    <label for="txtname" ng-i18next="table.header.product.sku"></label>
+                </div>
+                <div class="">
+                    <input ng-model="product.sku"
+                           name="sku"
+                           type="text"
+                           class="form-control"
+                           step="any"
+                           maxlength="64"/>
+
+                    <div id="nameErr" ng-show="createProductForm.sku.$touched">
+                                                <span class="help-block" ng-show="createProductForm.sku.$error.pattern"
+                                                      ng-i18next="validation.sku.invalid_pattern">Price must be a number</span>
+                        <span class="help-block" ng-show="createProductForm.sku.$error.required"
+                              ng-i18next="validation.sku.required"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="clearfix20"></div>
+    <div class="row">
+        <div class="col-md-4 col-sm-12">
+            <div class="">
+                <label for="txtDescription" ng-i18next="table.header.cate_name"
+                       style="margin-left: 10px; margin-bottom: 0px"></label>
+            </div>
+            <div class="col-xs-11" style="padding-left: 0px">
+                <tags-input ng-model="tags" class="tags-input-css">
+                    <auto-complete source="loadTags($query)"></auto-complete>
+                </tags-input>
+            </div>
+            <div class="col-xs-1">
+                <a class="btn btn-primary glyphicon glyphicon-plus button-add-cate"
+                   ng-click="addCategory()"></a>
+            </div>
+        </div>
+        <div class="col-md-8 col-sm-12" style="padding-left: 5px">
+            <div class="">
+                <label for="txtDescription" ng-i18next="table.header.book.description"></label>
+            </div>
+            <div class="">
+                                            <textarea ng-model="product.description"
+                                                      name="description"
+                                                      id="txtDescription"
+                                                      aria-describedby="descriptionErr"
+                                                      type="text"
+                                                      class="form-control"
+                                                      style="height: 44px;" maxlength="500"
+                                            ></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<hr>
+<div class="clearfix20">
+</div>
+<div class="row">
+    <div class="col-md-4 col-sm-12"
+         ng-class="{'has-error' : createProductForm.feedProductType.$touched && createProductForm.feedProductType.$invalid}"
+         style="padding-left: 0">
+        <div class="">
+            <label for="txtname" ng-i18next="table.header.book.feedProductType"></label>
+        </div>
+        <div class="">
+            <input ng-model="product.feedProductType"
+                   name="feedProductType"
+                   id="feedProductType"
+                   aria-describedby="feedProductTypeErr"
+                   type="text"
+                   class="form-control"
+                   maxlength="64"/>
+
+            <div id="feedProductTypeErr"
+                 ng-show="createProductForm.feedProductType.$touched">
+                                        <span class="help-block"
+                                              ng-show="createProductForm.feedProductType.$error.pattern"
+                                              ng-i18next="validation.generic.invalid_pattern"></span>
+                <span class="help-block"
+                      ng-show="createProductForm.feedProductType.$error.required"
+                      ng-i18next="validation.generic.required"></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12"
+         ng-class="{'has-error' : createProductForm.itemSku.$touched && createProductForm.itemSku.$invalid}"
+         style="padding-left: 0">
+        <div class="">
+            <label for="txtname" ng-i18next="table.header.book.itemSku"></label>
+        </div>
+        <div class="">
+            <input ng-model="product.itemSku"
+                   name="itemSku"
+                   id="itemSku"
+                   aria-describedby="itemSkuErr"
+                   type="number"
+                   min="0"
+                   class="form-control"
+                   maxlength="10"/>
+
+            <div id="itemSkuErr" ng-show="createProductForm.itemSku.$touched">
+                                        <span class="help-block" ng-show="createProductForm.itemSku.$error.pattern"
+                                              ng-i18next="validation.generic.invalid_pattern"></span>
+                <span class="help-block" ng-show="createProductForm.itemSku.$error.required"
+                      ng-i18next="validation.generic.required"></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12"
+         ng-class="{'has-error' : createProductForm.itemName.$touched && createProductForm.itemName.$invalid}"
+         style="padding-left: 0">
+        <div class="">
+            <label for="txtname" ng-i18next="table.header.book.itemName"></label>
+        </div>
+        <div class="">
+            <input ng-model="product.itemName"
+                   name="itemName"
+                   id="itemName"
+                   aria-describedby="itemNameErr"
+                   type="text"
+                   class="form-control"
+                   maxlength="64"/>
+
+            <div id="itemNameErr" ng-show="createProductForm.itemName.$touched">
+                                        <span class="help-block" ng-show="createProductForm.itemName.$error.pattern"
+                                              ng-i18next="validation.generic.invalid_pattern"></span>
+                <span class="help-block" ng-show="createProductForm.itemName.$error.required"
+                      ng-i18next="validation.generic.required"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="clearfix20"></div>
+<div class="row">
+    <div class="col-md-4 col-sm-12"
+         ng-class="{'has-error' : createProductForm.externalProductId.$touched && createProductForm.externalProductId.$invalid}"
+         style="padding-left: 0">
+        <div class="">
+            <label for="txtname" ng-i18next="table.header.book.externalProductId"></label>
+        </div>
+        <div class="">
+            <input ng-model="product.externalProductId"
+                   name="externalProductId"
+                   id="externalProductId"
+                   aria-describedby="externalProductIdErr"
+                   type="number"
+                   min="0"
+                   class="form-control"
+                   maxlength="64"/>
+
+            <div id="externalProductIdErr"
+                 ng-show="createProductForm.externalProductId.$touched">
+                                        <span class="help-block"
+                                              ng-show="createProductForm.externalProductId.$error.pattern"
+                                              ng-i18next="validation.generic.invalid_pattern"></span>
+                <span class="help-block"
+                      ng-show="createProductForm.externalProductId.$error.required"
+                      ng-i18next="validation.generic.required"></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12"
+         ng-class="{'has-error' : createProductForm.externalProductIdType.$touched && createProductForm.externalProductIdType.$invalid}"
+         style="padding-left: 0">
+        <div class="">
+            <label for="txtname"
+                   ng-i18next="table.header.book.externalProductIdType"></label>
+        </div>
+        <div class="">
+            <input ng-model="product.externalProductIdType"
+                   name="externalProductIdType"
+                   id="externalProductIdType"
+                   aria-describedby="externalProductIdTypeErr"
+                   type="text"
+                   class="form-control"
+                   maxlength="10"/>
+
+            <div id="externalProductIdTypeErr"
+                 ng-show="createProductForm.externalProductIdType.$touched">
+                                        <span class="help-block"
+                                              ng-show="createProductForm.externalProductIdType.$error.pattern"
+                                              ng-i18next="validation.generic.invalid_pattern"></span>
+                <span class="help-block"
+                      ng-show="createProductForm.externalProductIdType.$error.required"
+                      ng-i18next="validation.generic.required"></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12"
+         ng-class="{'has-error' : createProductForm.externalProductInformation.$touched && createProductForm.externalProductInformation.$invalid}"
+         style="padding-left: 0">
+        <div class="">
+            <label for="txtname"
+                   ng-i18next="table.header.book.externalProductInformation"></label>
+        </div>
+        <div class="">
+            <input ng-model="product.externalProductInformation"
+                   name="externalProductInformation"
+                   id="externalProductInformation"
+                   aria-describedby="externalProductInformationErr"
+                   type="number"
+                   min="0"
+                   class="form-control"
+                   maxlength="64"/>
+
+            <div id="externalProductInformationErr"
+                 ng-show="createProductForm.externalProductInformation.$touched">
+                                        <span class="help-block"
+                                              ng-show="createProductForm.externalProductInformation.$error.pattern"
+                                              ng-i18next="validation.generic.invalid_pattern"></span>
+                <span class="help-block"
+                      ng-show="createProductForm.externalProductInformation.$error.required"
+                      ng-i18next="validation.generic.required"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="clearfix20"></div>
+<div class="row">
+    <div class="col-md-4 col-sm-12"
+         ng-class="{'has-error' : createProductForm.binding.$touched && createProductForm.binding.$invalid}"
+         style="padding-left: 0">
+        <div class="">
+            <label for="txtname" ng-i18next="table.header.book.binding"></label>
+        </div>
+        <div class="">
+            <select ng-model="product.binding" ng-options="x for x in bindingOptions"
+                    name="binding"
+                    id="binding"
+                    aria-describedby="bindingErr"
+                    class="form-control">
+            </select>
+            <div id="bindingErr" ng-show="createProductForm.binding.$touched">
+                                        <span class="help-block" ng-show="createProductForm.binding.$error.pattern"
+                                              ng-i18next="validation.generic.invalid_pattern"></span>
+                <span class="help-block" ng-show="createProductForm.binding.$error.required"
+                      ng-i18next="validation.generic.required"></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12"
+         ng-class="{'has-error' : createProductForm.edition.$touched && createProductForm.edition.$invalid}"
+         style="padding-left: 0">
+        <div class="">
+            <label for="txtname" ng-i18next="table.header.book.edition"></label>
+        </div>
+        <div class="">
+            <input ng-model="product.edition"
+                   name="edition"
+                   id="edition"
+                   aria-describedby="editionErr"
+                   type="text"
+                   class="form-control"
+                   maxlength="10"/>
+
+            <div id="editionErr" ng-show="createProductForm.edition.$touched">
+                                        <span class="help-block" ng-show="createProductForm.edition.$error.pattern"
+                                              ng-i18next="validation.generic.invalid_pattern"></span>
+                <span class="help-block" ng-show="createProductForm.edition.$error.required"
+                      ng-i18next="validation.generic.required"></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12"
+         ng-class="{'has-error' : createProductForm.publicationDate.$touched && createProductForm.publicationDate.$invalid}"
+         style="padding-left: 0">
+        <div class="">
+            <label for="txtname" ng-i18next="table.header.book.publicationDate"></label>
+        </div>
+        <div class="">
+            <input ng-model="product.publicationDate"
+                   name="publicationDate"
+                   id="publicationDate"
+                   aria-describedby="publicationDateErr"
+                   type="number"
+                   min="0"
+                   class="form-control"
+                   maxlength="64"/>
+
+            <div id="publicationDateErr" ng-show="createProductForm.publicationDate.$touched">
+                                        <span class="help-block"
+                                              ng-show="createProductForm.publicationDate.$error.pattern"
+                                              ng-i18next="validation.generic.invalid_pattern"></span>
+                <span class="help-block"
+                      ng-show="createProductForm.publicationDate.$error.required"
+                      ng-i18next="validation.generic.required"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="clearfix20"></div>
+<div class="row">
+    <div class="col-md-4 col-sm-12"
+         ng-class="{'has-error' : createProductForm.catalogNumber.$touched && createProductForm.catalogNumber.$invalid}"
+         style="padding-left: 0">
+        <div class="">
+            <label for="txtname" ng-i18next="table.header.book.catalogNumber"></label>
+        </div>
+        <div class="">
+            <input ng-model="product.catalogNumber"
+                   name="catalogNumber"
+                   id="catalogNumber"
+                   aria-describedby="catalogNumberErr"
+                   type="text"
+                   class="form-control"
+                   maxlength="10"/>
+
+            <div id="catalogNumberErr" ng-show="createProductForm.catalogNumber.$touched">
+                                        <span class="help-block" ng-show="createProductForm.catalogNumber.$error.pattern"
+                                              ng-i18next="validation.generic.invalid_pattern"></span>
+                <span class="help-block" ng-show="createProductForm.catalogNumber.$error.required"
+                      ng-i18next="validation.generic.required"></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12"
+         ng-class="{'has-error' : createProductForm.genericKeywords.$touched && createProductForm.genericKeywords.$invalid}"
+         style="padding-left: 0">
+        <div class="">
+            <label for="txtname" ng-i18next="table.header.book.genericKeywords"></label>
+        </div>
+        <div class="">
+            <input ng-model="product.genericKeywords"
+                   name="genericKeywords"
+                   id="genericKeywords"
+                   aria-describedby="genericKeywordsErr"
+                   type="text"
+                   class="form-control"
+                   maxlength="10"/>
+
+            <div id="genericKeywordsErr" ng-show="createProductForm.genericKeywords.$touched">
+                                        <span class="help-block" ng-show="createProductForm.genericKeywords.$error.pattern"
+                                              ng-i18next="validation.generic.invalid_pattern"></span>
+                <span class="help-block" ng-show="createProductForm.genericKeywords.$error.required"
+                      ng-i18next="validation.generic.required"></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12"
+         ng-class="{'has-error' : createProductForm.targetAudienceBases.$touched && createProductForm.targetAudienceBases.$invalid}"
+         style="padding-left: 0">
+        <div class="">
+            <label for="txtname" ng-i18next="table.header.book.targetAudienceBases"></label>
+        </div>
+        <div class="">
+            <label class="checkbox-inline" ng-repeat="opt in targetAudienceBasesOptions"><input type="checkbox" ng-value="opt" ng-checked="product.targetAudienceBases.indexOf(opt) > -1" ng-click="toggleTargetSelection(opt)">{{opt}}</label>
+        </div>
+    </div>
+</div>
+
+<div class="clearfix20"></div>
+<div class="row">
+    <div class="col-md-4 col-sm-12"
+         ng-class="{'has-error' : createProductForm.pages.$touched && createProductForm.pages.$invalid}"
+         style="padding-left: 0">
+        <div class="">
+            <label for="txtname" ng-i18next="table.header.book.pages"></label>
+        </div>
+        <div class="">
+            <input ng-model="product.pages"
+                   name="pages"
+                   id="pages"
+                   aria-describedby="pagesErr"
+                   type="number"
+                   min="0"
+                   class="form-control"
+                   maxlength="64"/>
+
+            <div id="pagesErr"
+                 ng-show="createProductForm.pages.$touched">
+                                        <span class="help-block"
+                                              ng-show="createProductForm.pages.$error.pattern"
+                                              ng-i18next="validation.generic.invalid_pattern"></span>
+                <span class="help-block"
+                      ng-show="createProductForm.pages.$error.required"
+                      ng-i18next="validation.generic.required"></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12"
+         ng-class="{'has-error' : createProductForm.languagePublished.$touched && createProductForm.languagePublished.$invalid}"
+         style="padding-left: 0">
+        <div class="">
+            <label for="txtname"
+                   ng-i18next="table.header.book.languagePublished"></label>
+        </div>
+        <div class="">
+            <select ng-model="product.languagePublished" ng-options="x for x in languagePublishedOptions"
+                    name="languagePublished"
+                    id="languagePublished"
+                    aria-describedby="languagePublishedErr"
+                    class="form-control">
+            </select>
+            <div id="languagePublishedErr" ng-show="createProductForm.languagePublished.$touched">
+                                        <span class="help-block" ng-show="createProductForm.languagePublished.$error.pattern"
+                                              ng-i18next="validation.generic.invalid_pattern"></span>
+                <span class="help-block" ng-show="createProductForm.languagePublished.$error.required"
+                      ng-i18next="validation.generic.required"></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12"
+         ng-class="{'has-error' : createProductForm.minimumReadingInterestAge.$touched && createProductForm.minimumReadingInterestAge.$invalid}"
+         style="padding-left: 0">
+        <div class="">
+            <label for="txtname"
+                   ng-i18next="table.header.book.minimumReadingInterestAge"></label>
+        </div>
+        <div class="">
+            <input ng-model="product.minimumReadingInterestAge"
+                   name="minimumReadingInterestAge"
+                   id="minimumReadingInterestAge"
+                   aria-describedby="minimumReadingInterestAgeErr"
+                   type="number"
+                   min="0"
+                   max="150"
+                   class="form-control"
+                   maxlength="64"/>
+
+            <div id="minimumReadingInterestAgeErr"
+                 ng-show="createProductForm.minimumReadingInterestAge.$touched">
+                                        <span class="help-block"
+                                              ng-show="createProductForm.minimumReadingInterestAge.$error.pattern"
+                                              ng-i18next="validation.generic.invalid_pattern"></span>
+                <span class="help-block"
+                      ng-show="createProductForm.minimumReadingInterestAge.$error.required"
+                      ng-i18next="validation.generic.required"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="clearfix20"></div>
+<div class="row">
+    <div class="col-md-4 col-sm-12"
+         ng-class="{'has-error' : createProductForm.websiteShippingWeight.$touched && createProductForm.websiteShippingWeight.$invalid}"
+         style="padding-left: 0">
+        <div class="">
+            <label for="txtname" ng-i18next="table.header.book.websiteShippingWeight"></label>
+        </div>
+        <div class="">
+            <input ng-model="product.websiteShippingWeight"
+                   name="websiteShippingWeight"
+                   id="websiteShippingWeight"
+                   aria-describedby="websiteShippingWeightErr"
+                   type="text"
+                   class="form-control"
+                   maxlength="64"/>
+
+            <div id="websiteShippingWeightErr"
+                 ng-show="createProductForm.websiteShippingWeight.$touched">
+                                        <span class="help-block"
+                                              ng-show="createProductForm.websiteShippingWeight.$error.pattern"
+                                              ng-i18next="validation.generic.invalid_pattern"></span>
+                <span class="help-block"
+                      ng-show="createProductForm.websiteShippingWeight.$error.required"
+                      ng-i18next="validation.generic.required"></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12"
+         ng-class="{'has-error' : createProductForm.itemHeight.$touched && createProductForm.itemHeight.$invalid}"
+         style="padding-left: 0">
+        <div class="">
+            <label for="txtname" ng-i18next="table.header.book.itemHeight"></label>
+        </div>
+        <div class="">
+            <input ng-model="product.itemHeight"
+                   name="itemHeight"
+                   id="itemHeight"
+                   aria-describedby="itemHeightErr"
+                   type="text"
+                   class="form-control"
+                   maxlength="10"/>
+
+            <div id="itemHeightErr" ng-show="createProductForm.itemHeight.$touched">
+                                        <span class="help-block" ng-show="createProductForm.itemHeight.$error.pattern"
+                                              ng-i18next="validation.generic.invalid_pattern"></span>
+                <span class="help-block" ng-show="createProductForm.itemHeight.$error.required"
+                      ng-i18next="validation.generic.required"></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12"
+         ng-class="{'has-error' : createProductForm.itemLength.$touched && createProductForm.itemLength.$invalid}"
+         style="padding-left: 0">
+        <div class="">
+            <label for="txtname" ng-i18next="table.header.book.itemLength"></label>
+        </div>
+        <div class="">
+            <input ng-model="product.itemLength"
+                   name="itemLength"
+                   id="itemLength"
+                   aria-describedby="itemLengthErr"
+                   type="text"
+                   class="form-control"
+                   maxlength="64"/>
+
+            <div id="itemLengthErr" ng-show="createProductForm.itemLength.$touched">
+                                        <span class="help-block" ng-show="createProductForm.itemLength.$error.pattern"
+                                              ng-i18next="validation.generic.invalid_pattern"></span>
+                <span class="help-block" ng-show="createProductForm.itemLength.$error.required"
+                      ng-i18next="validation.generic.required"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="clearfix20"></div>
+<div class="row">
+    <div class="col-md-4 col-sm-12"
+         ng-class="{'has-error' : createProductForm.itemWidth.$touched && createProductForm.itemWidth.$invalid}"
+         style="padding-left: 0">
+        <div class="">
+            <label for="txtname" ng-i18next="table.header.book.itemWidth"></label>
+        </div>
+        <div class="">
+            <input ng-model="product.itemWidth"
+                   name="itemWidth"
+                   id="itemWidth"
+                   aria-describedby="itemWidthErr"
+                   type="text"
+                   class="form-control"
+                   maxlength="64"/>
+
+            <div id="itemWidthErr"
+                 ng-show="createProductForm.itemWidth.$touched">
+                                        <span class="help-block"
+                                              ng-show="createProductForm.itemWidth.$error.pattern"
+                                              ng-i18next="validation.generic.invalid_pattern"></span>
+                <span class="help-block"
+                      ng-show="createProductForm.itemWidth.$error.required"
+                      ng-i18next="validation.generic.required"></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12"
+         ng-class="{'has-error' : createProductForm.itemWeight.$touched && createProductForm.itemWeight.$invalid}"
+         style="padding-left: 0">
+        <div class="">
+            <label for="txtname" ng-i18next="table.header.book.itemWeight"></label>
+        </div>
+        <div class="">
+            <input ng-model="product.itemWeight"
+                   name="itemWeight"
+                   id="itemWeight"
+                   aria-describedby="itemWeightErr"
+                   type="text"
+                   class="form-control"
+                   maxlength="10"/>
+
+            <div id="itemWeightErr" ng-show="createProductForm.itemWeight.$touched">
+                                        <span class="help-block" ng-show="createProductForm.itemWeight.$error.pattern"
+                                              ng-i18next="validation.generic.invalid_pattern"></span>
+                <span class="help-block" ng-show="createProductForm.itemWeight.$error.required"
+                      ng-i18next="validation.generic.required"></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12"
+         ng-class="{'has-error' : createProductForm.countryOfOrigin.$touched && createProductForm.countryOfOrigin.$invalid}"
+         style="padding-left: 0">
+        <div class="">
+            <label for="txtname" ng-i18next="table.header.book.countryOfOrigin"></label>
+        </div>
+        <div class="">
+            <input ng-model="product.countryOfOrigin"
+                   name="countryOfOrigin"
+                   id="countryOfOrigin"
+                   aria-describedby="countryOfOriginErr"
+                   type="text"
+                   class="form-control"
+                   maxlength="64"/>
+
+            <div id="countryOfOriginErr" ng-show="createProductForm.countryOfOrigin.$touched">
+                                        <span class="help-block" ng-show="createProductForm.countryOfOrigin.$error.pattern"
+                                              ng-i18next="validation.generic.invalid_pattern"></span>
+                <span class="help-block" ng-show="createProductForm.countryOfOrigin.$error.required"
+                      ng-i18next="validation.generic.required"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="clearfix20"></div>
+<div class="row">
+    <div class="col-md-12 col-sm-12"
+         ng-class="{'has-error' : createProductForm.legalDisclaimerDescription.$touched && createProductForm.legalDisclaimerDescription.$invalid}"
+         style="padding-left: 0">
+        <div class="">
+            <label for="txtname" ng-i18next="table.header.book.legalDisclaimerDescription"></label>
+        </div>
+        <div class="">
+            <input ng-model="product.legalDisclaimerDescription"
+                   name="legalDisclaimerDescription"
+                   id="legalDisclaimerDescription"
+                   aria-describedby="legalDisclaimerDescriptionErr"
+                   type="text"
+                   class="form-control"
+                   maxlength="64"/>
+
+            <div id="legalDisclaimerDescriptionErr"
+                 ng-show="createProductForm.legalDisclaimerDescription.$touched">
+                                        <span class="help-block"
+                                              ng-show="createProductForm.legalDisclaimerDescription.$error.pattern"
+                                              ng-i18next="validation.generic.invalid_pattern"></span>
+                <span class="help-block"
+                      ng-show="createProductForm.legalDisclaimerDescription.$error.required"
+                      ng-i18next="validation.generic.required"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="clearfix20"></div>
+<div style="border: 1px solid #c8c9bc;">
+    <div style="margin: 10px">
+        <div class="row" style="margin: 10px">
+            <div class="col-md-10 col-sm-10"
+                 style="padding-left: 0">
+                <div class="">
+                    <label for="txtname" ng-i18next="table.header.book.author"></label>
+                </div>
+                <div class="">
+                    <input ng-model="author"
+                           name="author"
+                           id="author"
+                           aria-describedby="authorErr"
+                           type="text"
+                           class="form-control"
+                    />
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-2" style="margin-top: 25px">
+                <button type="button" class="btn btn-success" ng-disabled="!author"
+                        ng-click="addAuthor(author)">
+                    <span class="fa fa-plus"></span>
+                </button>
+            </div>
+        </div>
+        <div class="clearfix1"></div>
+        <div class="row" style="margin-left: 10px">
+            <div class="col-md-12 col-sm-12">
+                <div class="chip" ng-repeat="author in product.authors"
+                     style="margin-left: 10px">
+                    <img src="img/profile.jpg" alt="Author" width="96" height="96">
+                    {{author}}
+                    <span class="closebtn" ng-click="removeAuthor(author)">&times;</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="clearfix20"></div>
+<div class="row">
+    <div>
+        <label for="txtname" ng-i18next="table.header.book.image"></label>
+    </div>
+    <div class="">
+        <div class="col-md-4 col-sm-4" ng-repeat="image in product.images">
+
+            <input fileread="image.data" type="file"
+                   class="dropify{{$index}}"
+                   ng-init="loadDropify('dropify'+$index)"
+                   data-max-file-size="10M"
+                   data-allowed-file-extensions="jpeg jpg png gif bmp"
+                   accept="image/*" />
+
+            <!--<img ng-src="{{image.data}}">-->
+
+        </div>
+    </div>
+    <div style="border: 1px solid #c8c9bc;">
+
+    </div>
+</div>

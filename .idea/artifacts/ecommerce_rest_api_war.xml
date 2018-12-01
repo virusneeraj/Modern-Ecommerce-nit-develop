@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ecommerce-rest-api:war">
+    <output-path>$PROJECT_DIR$/backend-rest-api/target</output-path>
+    <root id="archive" name="ecommerce-rest-api-1.0.0.war">
+      <element id="artifact" artifact-name="ecommerce-rest-api:war exploded" />
+    </root>
+  </artifact>
+</component>
